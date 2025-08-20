@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P.P.T.</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        body{
+            min-height: 100vh;
+            place-content: center;
+            place-items: center;
+            background-color: rgb(88, 88, 88);
+        }
+        h1{
+            font-size: 50px;
+            padding: 20px;
+        }
+        button{
+            font-size: 30px;
+            padding: 10px;
+            margin: 7px;
+            color: rgb(0, 0, 0);
+            background-color: rgb(255, 74, 74);
+        }
+    </style>
+</head>
+<body>
+    <h1>Jogo JOKENPÔ</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Rock-paper-scissors-pt.svg/1200px-Rock-paper-scissors-pt.svg.png" alt="Imagem mãos jokenpô" width="500px">
+    <section class="btns">
+        <button onclick="choose1()">Tesoura!✌️</button>
+        <button onclick="choose2()">Pedra!✊</button>
+        <button onclick="choose3()">Papel!🤚</button>
+    </section>
+    <script>
+        function choose1() {
+            jogar('tesoura')
+        }
+        function choose2() {
+            jogar('pedra')
+        }
+        function choose3() {
+            jogar('papel')
+        }
+        function jogar(escolha) {
+            const jogadas = ["tesoura", "pedra", "papel"]
+            const escolhaIA = jogadas[Math.floor(Math.random() * 3)]
+        }
+        let resultado = `você escolheu: ${jogadas}<br>`
+    </script>
+</body>
+</html>
