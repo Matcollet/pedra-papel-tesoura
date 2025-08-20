@@ -17,19 +17,32 @@
         h1{
             font-size: 50px;
             padding: 20px;
+            font-style: italic;
+        }
+        h2{
+            font-size: 35px;
+        }
+        p{
+            font-size: 30px;
         }
         button{
             font-size: 30px;
             padding: 10px;
             margin: 7px;
             color: rgb(0, 0, 0);
-            background-color: rgb(255, 74, 74);
+            background-color: rgb(255, 60, 60);
+            text-shadow: rgb(65, 65, 65) 1px 1px;
+        }
+        button:hover{
+            background-color: rgb(138, 33, 33);
         }
     </style>
 </head>
 <body>
     <h1>Jogo JOKENPÔ</h1>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Rock-paper-scissors-pt.svg/1200px-Rock-paper-scissors-pt.svg.png" alt="Imagem mãos jokenpô" width="500px">
+        <h2>Faça sua jogada!</h2>
+        <p id="resultado"></p>
     <section class="btns">
         <button onclick="choose1()">Tesoura!✌️</button>
         <button onclick="choose2()">Pedra!✊</button>
@@ -48,8 +61,22 @@
         function jogar(escolha) {
             const jogadas = ["tesoura", "pedra", "papel"]
             const escolhaIA = jogadas[Math.floor(Math.random() * 3)]
+            let resultado = `você escolheu: ${escolha}<br>`
+            resultado += `computador escolheu ${escolhaIA}<br>`
+            if (escolha === escolhaIA) {
+                resultado += "Empatou..."
+            } else if (
+                (escolha === "pedra" && escolhaIA === "tesoura") ||
+                (escolha === "papel" && escolhaIA === "pedra") ||
+                (escolha === "tesoura" && escolhaIA === "papel")
+            ) {
+                resultado += "você venceu!"
+            } else {
+                resultado += "você perdeu..."
+            }
+
+            document.getElementById("resultado").innerHTML = resultado
         }
-        let resultado = `você escolheu: ${jogadas}<br>`
     </script>
 </body>
 </html>
