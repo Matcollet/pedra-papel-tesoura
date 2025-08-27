@@ -41,6 +41,11 @@ button:hover {
     background-color: rgb(138, 33, 33);
 }
 
+img {
+    display: block;
+    margin: 20px auto;
+}
+
 @media (max-width: 430px) {
     button {
         width: 130px;
